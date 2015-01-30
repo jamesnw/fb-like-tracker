@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FB like tracker</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.5.0/bootstrap-table.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.5.0/bootstrap-table.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1>FB like tracker</h1>
+</div>
+
+<table id="table" data-search=true data-sortable=true>
+  <thead>
+    <tr>
+      <th data-field="category" data-formatter="linkFormatter" data-sortable="true">Type</th>
+      <th data-field="page" data-formatter="linkFormatter" data-sortable="true">Page</th>
+      <th data-field="likes" data-formatter="linkFormatter" data-sortable="true">Likes</th>
+      <th data-field="dailyGrowth" data-formatter="linkFormatter" data-sortable="true">Daily Growth</th>
+      <th data-field="dailyPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Daily % Growth</th>
+      <!-- 
+	  <th data-field="weeklyGrowth" data-formatter="linkFormatter" data-sortable="true">Question</th>
+      <th data-field="weeklyPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Answer</th>    
+      <th data-field="monthlyGrowth" data-formatter="linkFormatter" data-sortable="true">Question</th>
+      <th data-field="monthlyPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Answer</th>
+      <th data-field="halfyrGrowth" data-formatter="linkFormatter" data-sortable="true">Question</th>
+      <th data-field="halfyrPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Answer</th>
+	  <th data-field="yrGrowth" data-formatter="linkFormatter" data-sortable="true">Question</th>
+      <th data-field="yrPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Answer</th>
+ -->
+      <th data-field="talking_about_count" data-formatter="linkFormatter" data-sortable="true">PTAT</th>
+    </tr>
+  </thead>
+</table>
+<script src="categories.js"></script>
+<script>
+
+
+$('#table').bootstrapTable({
+    url:"data/current.js"
+});
+
+
+
+
+</script>
+</body>
+</html>
+</div>
