@@ -21,17 +21,13 @@ function query($id){
         
         $output = json_decode($output);
         
-       $return = '';
+       	$return = '';
         
         $myFile = 'data/'.$id.".csv";
         $fh = fopen($myFile, 'a');
-         //See if file already exists
-         if(filesize($myFile) == 0){
-          $return = "Date,Likes,Talking About,Checkins,Were Here Count,Daily Growth,Daily Percentage Growth,Weekly Growth, Weekly Percentage Growth,Monthly Growth,Monthly Percentage Growth".$output->name."\n".$return;
-         }
          
         $lines = file($myFile);
-        $daysOfData = count($lines)-1;
+        $daysOfData = count($lines);
         
         $dailyGrowth = '';
         $dailyPercentageGrowth ='';
@@ -91,7 +87,7 @@ function query($id){
         date_default_timezone_set('America/Indiana/Indianapolis');
          $date = date('Y-m-d-H');
        
-        $return = $date.','.$output->likes.','.$output->talking_about_count.','.$output->checkins.','.$output->were_here_count.','.$dailyGrowth.','.$dailyPercentageGrowth.','.$weeklyGrowth.','.$weeklyPercentageGrowth.','.$monthlyGrowth.','.$monthlyPercentageGrowth;
+        $return .= $date.','.$output->likes.','.$output->talking_about_count.','.$output->checkins.','.$output->were_here_count.','.$dailyGrowth.','.$dailyPercentageGrowth.','.$weeklyGrowth.','.$weeklyPercentageGrowth.','.$monthlyGrowth.','.$monthlyPercentageGrowth;
         $return .= "\n";
         
         fwrite($fh,$return);
