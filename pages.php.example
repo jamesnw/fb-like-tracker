@@ -1,0 +1,26 @@
+<?php
+// This file should have 1 variable, $sections, that is an associative array of Categories,
+// that is an associative array of page names to graph id numbers.
+// Graph id numbers can be found by going to the page on Facebook, and replacing www 
+// with graph, ie https://graph.facebook.com/nytimes instead of 
+// https://www.facebook.com/nytimes
+//
+// Page names will be fetched from Facebook, the text below is only to keep page names 
+// straight on the backend.
+//
+// Edit this file, and rename it to pages.php.
+
+$sections = array(
+	"News" => array(
+		"CNN"=>"5550296508",
+		"NYT"=>"5281959998",
+	),
+	"Food" => array(
+		"Coke"=>"40796308305",
+		"Pepsi"=>"339150749455906",
+	),
+	"Comedy" => array(
+		"The Onion"=>"20950654496",
+	),
+);	
+?>
