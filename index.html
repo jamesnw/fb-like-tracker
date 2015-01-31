@@ -16,25 +16,24 @@
   <h1>FB like tracker</h1>
 </div>
 
-<table id="table" data-search=true data-sortable=true>
+<table id="table" data-search=true data-sortable=true data-show-columns="true" data-id-field="id">
   <thead>
     <tr>
-      <th data-field="category" data-formatter="linkFormatter" data-sortable="true">Type</th>
-      <th data-field="page" data-formatter="linkFormatter" data-sortable="true">Page</th>
-      <th data-field="likes" data-formatter="linkFormatter" data-sortable="true">Likes</th>
-      <th data-field="dailyGrowth" data-formatter="linkFormatter" data-sortable="true">Daily Growth</th>
-      <th data-field="dailyPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Daily % Growth</th>
-      <!-- 
-	  <th data-field="weeklyGrowth" data-formatter="linkFormatter" data-sortable="true">Question</th>
-      <th data-field="weeklyPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Answer</th>    
-      <th data-field="monthlyGrowth" data-formatter="linkFormatter" data-sortable="true">Question</th>
-      <th data-field="monthlyPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Answer</th>
-      <th data-field="halfyrGrowth" data-formatter="linkFormatter" data-sortable="true">Question</th>
-      <th data-field="halfyrPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Answer</th>
-	  <th data-field="yrGrowth" data-formatter="linkFormatter" data-sortable="true">Question</th>
-      <th data-field="yrPercentageGrowth" data-formatter="linkFormatter" data-sortable="true">Answer</th>
- -->
-      <th data-field="talking_about_count" data-formatter="linkFormatter" data-sortable="true">PTAT</th>
+      <th data-field="category" data-sortable="true">Type</th>
+      <th data-field="page" data-sortable="true">Page</th>
+      <th data-field="id" data-formatter="idFormatter">Link</th>
+      <th data-field="likes" data-sortable="true">Likes</th>
+      <th data-field="dailyGrowth" data-sortable="true">Daily Growth</th>
+      <th data-field="dailyPercentageGrowth" data-sortable="true">Daily % Growth</th>
+	  <th data-field="weeklyGrowth" data-sortable="true" data-visible="false">Weekly Growth</th>
+      <th data-field="weeklyPercentageGrowth" data-sortable="true" data-visible="false">Weekly % Growth</th>    
+      <th data-field="monthlyGrowth" data-sortable="true" data-visible="false">Monthly Growth</th>
+      <th data-field="monthlyPercentageGrowth" data-sortable="true" data-visible="false">Monthly % Growth</th>
+      <th data-field="halfyrGrowth" data-sortable="true" data-visible="false">6 Month Growth</th>
+      <th data-field="halfyrPercentageGrowth" data-sortable="true" data-visible="false">6 Month % Growth</th>
+	  <th data-field="yrGrowth" data-sortable="true" data-visible="false">Yearly Growth</th>
+      <th data-field="yrPercentageGrowth" data-sortable="true" data-visible="false">Yearly % Growth</th>
+      <th data-field="talking_about_count" data-sortable="true">PTAT</th>
     </tr>
   </thead>
 </table>
@@ -46,6 +45,9 @@ $('#table').bootstrapTable({
     url:"data/current.js"
 });
 
+function idFormatter(value){
+  return "<a href='https://facebook.com/"+value+"'>Link</a>";
+}
 
 
 
